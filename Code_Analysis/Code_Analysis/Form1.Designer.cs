@@ -298,6 +298,7 @@
             this.toolStrip1.Size = new System.Drawing.Size(806, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // createToolStripButton
             // 
@@ -423,6 +424,7 @@
             this.editRichTextBox.Size = new System.Drawing.Size(776, 241);
             this.editRichTextBox.TabIndex = 2;
             this.editRichTextBox.Text = "";
+            this.editRichTextBox.TextChanged += new System.EventHandler(this.editRichTextBox_TextChanged);
             // 
             // resultRichTextBox
             // 
@@ -449,7 +451,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Анализатор кода";
+            this.Text = "t";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

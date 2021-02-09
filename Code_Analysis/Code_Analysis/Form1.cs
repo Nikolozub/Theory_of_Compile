@@ -15,13 +15,18 @@ namespace Code_Analysis
     {
         string currentFileName;
         string windowsTitle;
+        bool textSaved;
 
         public Form1()
         {
             InitializeComponent();
-            currentFileName = "";
             windowsTitle = "Анализатор кода";
-            this.Text = windowsTitle;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.textSaved = true;
+            newFile();
         }
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,19 +89,48 @@ namespace Code_Analysis
             editRichTextBox.Redo();
         }
 
+        private void newFile() 
+        {
+            if (!textSaved)
+            {
+                var result = MessageBox.Show("Сохранить файл " + currentFileName + "?", "Сохранение",
+                                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    saveFile();
+                }
+            }
+            editRichTextBox.Clear();
+            currentFileName = "";
+            Text = windowsTitle;
+        }
+
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            newFile();
         }
 
         private void openFile() 
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string fileName = openFileDialog1.FileName;
+                if (!textSaved)
+                {
+                    var result = MessageBox.Show("Сохранить файл " + currentFileName + "?", "Сохранение",
+                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        saveFile();
+                    }
+                }
+
+                string openFileName = openFileDialog1.FileName;
                 try
                 {
-                    editRichTextBox.LoadFile(fileName, RichTextBoxStreamType.PlainText);
+                    editRichTextBox.LoadFile(openFileName, RichTextBoxStreamType.PlainText);
+                    textSaved = true;
+                    currentFileName = openFileName;
+                    this.Text = openFileName + " - " + windowsTitle;
                 }
                 catch (IOException ex)
                 {
@@ -118,8 +152,9 @@ namespace Code_Analysis
                 try
                 {
                     editRichTextBox.SaveFile(newFileName, RichTextBoxStreamType.PlainText);
+                    textSaved = true;
                     currentFileName = newFileName;
-                    this.Text = newFileName + windowsTitle;
+                    this.Text = newFileName + " - " + windowsTitle;
                 }
                 catch (IOException ex)
                 {
@@ -130,11 +165,15 @@ namespace Code_Analysis
 
         private void saveFile() 
         {
+            if (textSaved) return;
+
             if (currentFileName != "")
             {
                 try
                 {
                     editRichTextBox.SaveFile(currentFileName, RichTextBoxStreamType.PlainText);
+                    textSaved = true;
+                    this.Text = currentFileName + " - " + windowsTitle;
                 }
                 catch (IOException ex)
                 {
@@ -160,6 +199,17 @@ namespace Code_Analysis
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveFileAs();
+        }
+
+        private void editRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.textSaved = false;
+            this.Text = currentFileName + "* - " + windowsTitle;
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
