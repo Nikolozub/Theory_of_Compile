@@ -56,7 +56,7 @@ namespace Code_Analysis
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+           // editRichTextBox.del
         }
 
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,6 +103,7 @@ namespace Code_Analysis
             editRichTextBox.Clear();
             currentFileName = "";
             Text = windowsTitle;
+            textSaved = true;
         }
 
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
@@ -210,6 +211,34 @@ namespace Code_Analysis
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void createToolStripButton_Click(object sender, EventArgs e)
+        {
+            newFile();
+        }
+
+        private void openToolStripButton_Click(object sender, EventArgs e)
+        {
+            openFile();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!textSaved) 
+            {
+                var result = MessageBox.Show("Сохранить файл " + currentFileName + "?", "Сохранение",
+                                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    saveFile();
+                }
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
