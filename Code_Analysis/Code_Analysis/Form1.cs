@@ -56,7 +56,7 @@ namespace Code_Analysis
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // editRichTextBox.del
+            editRichTextBox.SelectedText = "";
         }
 
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -239,6 +239,33 @@ namespace Code_Analysis
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void runHelp() 
+        {
+            string curDir = Directory.GetCurrentDirectory();
+            HelpForm helpForm = new HelpForm("file:///" + curDir + "/Help/html/help.html");
+            helpForm.Show();
+        }
+
+        private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            runHelp();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Приложение: блокнот buildAlphaOmega1.0\nГруппа: АВТ-813\nАвторы: Николай Самсонов\n\tЛысак Кирилл");
+        }
+
+        private void helpToolStripButton_Click(object sender, EventArgs e)
+        {
+            runHelp();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            saveFileAs();
         }
     }
 }
