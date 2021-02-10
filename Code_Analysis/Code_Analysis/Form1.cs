@@ -16,6 +16,7 @@ namespace Code_Analysis
         string currentFileName;
         string windowsTitle;
         bool textSaved;
+        Stack<string> undoList = new Stack<string>();
 
         public Form1()
         {
@@ -81,7 +82,10 @@ namespace Code_Analysis
 
         private void undoToolStripButton_Click(object sender, EventArgs e)
         {
-            editRichTextBox.Undo();
+            string text = undoList.Pop();
+            //MessageBox.Show(text);
+            editRichTextBox.Text = text;
+            text = "";
         }
 
         private void redoToolStripButton_Click(object sender, EventArgs e)
@@ -103,7 +107,7 @@ namespace Code_Analysis
             editRichTextBox.Clear();
             currentFileName = "";
             Text = windowsTitle;
-            textSaved = true;
+            textSaved = false;
         }
 
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
@@ -165,7 +169,8 @@ namespace Code_Analysis
         }
 
         private void saveFile() 
-        {
+        {    
+
             if (textSaved) return;
 
             if (currentFileName != "")
@@ -183,6 +188,7 @@ namespace Code_Analysis
             }
             else 
             {
+
                 saveFileAs();             
             }
         }
@@ -202,10 +208,14 @@ namespace Code_Analysis
             saveFileAs();
         }
 
+        // Изменение текста
         private void editRichTextBox_TextChanged(object sender, EventArgs e)
         {
             this.textSaved = false;
             this.Text = currentFileName + "* - " + windowsTitle;
+
+            // Сохранение состояния текста
+            undoList.Push(editRichTextBox.Text);
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -266,6 +276,16 @@ namespace Code_Analysis
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             saveFileAs();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            editRichTextBox.SelectedText = "";
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            editRichTextBox.Clear();
         }
     }
 }

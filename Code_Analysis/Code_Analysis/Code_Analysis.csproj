@@ -125,5 +125,14 @@
   <ItemGroup>
     <None Include="bin\Debug\LuckyIconOfficeSet\png\16x16\property.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\LuckyIconOfficeSet\png\16x16\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\LuckyIconOfficeSet\png\16x16\delete 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\LuckyIconOfficeSet\png\16x16\recycle bin.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
