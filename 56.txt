@@ -1,0 +1,82 @@
+//Rextester.Program.Main is the entry point for your code. Don't change it.
+//Microsoft (R) Visual C# Compiler version 2.9.0.63208 (958f2354)
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Rextester
+{
+    // описывает номер банковской карты в тексте
+    public struct CardInText
+    {
+        public string number;
+        public string type;
+        public int start_position;
+        public int end_position;   
+     }
+    
+    public class Program
+    {
+
+        public static CardInText[] getCards(string text, string type="")
+        { 
+            string exp;
+            
+            if (type == "MasterCard")
+                exp = @"\b5[0-9]{15}\b";
+            else if (type == "Мир")
+                exp = @"\b2[0-9]{15}\b";
+            else if (type == "Visa")
+                exp = @"\b4[0-9]{15}\b";
+            else
+                exp = @"\b[0-9]{16}\b";
+            
+            Regex regex = new Regex(exp);
+            
+            MatchCollection matches = regex.Matches(text);
+            
+            CardInText[] card_list = new CardInText[matches.Count];
+            
+            int i = 0;
+            
+            foreach (Match match in matches)
+            {
+                card_list[i].number = match.Value;
+                card_list[i].start_position = match.Index;
+                card_list[i].end_position = match.Index + match.Length;
+                int type_number = match.Value[0] - '0'; 
+                switch (type_number)
+                {
+                    case 2: 
+                        card_list[i].type = "Мир";
+                        break;
+                    case 5: 
+                        card_list[i].type = "MasterCard";
+                        break;
+                    case 4: 
+                        card_list[i].type = "Visa";
+                        break;
+                    default: 
+                        card_list[i].type = "Undefined";
+                        break;
+                }
+                i++;
+            }
+            
+            return card_list;
+        }
+        
+        public static void Main(string[] args)
+        {
+            string text = "2234567891011121 5234567891011121 \n 1234567891011121";
+            CardInText[] card_list = getCards(text, "MasterCard");
+            foreach (CardInText card in card_list)
+            {
+                Console.WriteLine(card.number.ToString() + " " + card.type + " (" + card.start_position.ToString() + "-" + card.end_position.ToString() + ")");
+            }
+            
+        }
+    }
+}
