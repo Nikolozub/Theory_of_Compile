@@ -18,3 +18,14 @@ C:\Users\user\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Co
 C:\Users\user\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.exe
 C:\Users\user\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.pdb
 C:\Users\user\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.HelpForm.resources
+C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\bin\Debug\Code_Analysis.exe.config
+C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\bin\Debug\Code_Analysis.exe
+C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\bin\Debug\Code_Analysis.pdb
+C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.csprojAssemblyReference.cache
+C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.Form1.resources
+C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.HelpForm.resources
+C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.Properties.Resources.resources
+C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.csproj.GenerateResource.cache
+C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.csproj.CoreCompileInputs.cache
+C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.exe
+C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.pdb

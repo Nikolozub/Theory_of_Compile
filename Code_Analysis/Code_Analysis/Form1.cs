@@ -11,12 +11,25 @@ using System.IO;
 
 namespace Code_Analysis
 {
+    public struct TextState
+    {
+        public string text;
+        public int cursor_pos;
+        public TextState(string text, int cursor_pos) 
+        {
+            this.text = text;
+            this.cursor_pos = cursor_pos;
+        }
+    }
+
     public partial class Form1 : Form
     {
         string currentFileName;
         string windowsTitle;
         bool textSaved;
-        Stack<string> undoList = new Stack<string>();
+
+        RingStack<TextState> undo_stack = new RingStack<TextState>(100);
+        RingStack<TextState> redo_stack = new RingStack<TextState>(100);
 
         public Form1()
         {
@@ -77,20 +90,35 @@ namespace Code_Analysis
 
         private void pasteToolStripButton_Click(object sender, EventArgs e)
         {
+            undo_stack.push(new TextState(editRichTextBox.Text, editRichTextBox.SelectionStart));
+            redo_stack.clear();
             editRichTextBox.Paste();
         }
 
         private void undoToolStripButton_Click(object sender, EventArgs e)
         {
-            string text = undoList.Pop();
-            //MessageBox.Show(text);
-            editRichTextBox.Text = text;
-            text = "";
+            // нормальный вариант: editRichTextBox.Undo();
+
+            if (!undo_stack.isempty())
+            {
+                redo_stack.push(new TextState(editRichTextBox.Text, editRichTextBox.SelectionStart));
+                TextState s = undo_stack.pop();
+                editRichTextBox.Text = s.text;
+                editRichTextBox.SelectionStart = s.cursor_pos;
+            }
         }
 
         private void redoToolStripButton_Click(object sender, EventArgs e)
         {
-            editRichTextBox.Redo();
+            // нормальный вариант: editRichTextBox.Redo();
+            
+            if (!redo_stack.isempty())
+            {
+                undo_stack.push(new TextState(editRichTextBox.Text, editRichTextBox.SelectionStart));
+                TextState s = redo_stack.pop();
+                editRichTextBox.Text = s.text;
+                editRichTextBox.SelectionStart = s.cursor_pos;
+            }
         }
 
         private void newFile() 
@@ -214,8 +242,6 @@ namespace Code_Analysis
             this.textSaved = false;
             this.Text = currentFileName + "* - " + windowsTitle;
 
-            // Сохранение состояния текста
-            undoList.Push(editRichTextBox.Text);
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -265,7 +291,7 @@ namespace Code_Analysis
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Приложение: блокнот buildAlphaOmega1.0\nГруппа: АВТ-813\nАвторы: Николай Самсонов\n\tЛысак Кирилл");
+            MessageBox.Show("Приложение: блокнот\nГруппа: АВТ-813\nАвторы: Николай Самсонов\n\tЛысак Кирилл");
         }
 
         private void helpToolStripButton_Click(object sender, EventArgs e)
@@ -286,6 +312,23 @@ namespace Code_Analysis
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             editRichTextBox.Clear();
+        }
+
+        private void runToolStripButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(editRichTextBox.SelectionStart.ToString());
+        }
+
+        private void editRichTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            
+        }
+
+        private void editRichTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            undo_stack.push(new TextState(editRichTextBox.Text, editRichTextBox.SelectionStart));
+            redo_stack.clear();
         }
     }
 }

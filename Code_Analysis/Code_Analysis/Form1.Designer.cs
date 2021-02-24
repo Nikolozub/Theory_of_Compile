@@ -57,27 +57,27 @@
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.editRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.resultRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.createToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.undoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.redoToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.runToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.editRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.resultRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -111,35 +111,35 @@
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.createToolStripMenuItem.Text = "Создать";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.openToolStripMenuItem.Text = "Открыть";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.saveToolStripMenuItem.Text = "Сохранить";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.saveAsToolStripMenuItem.Text = "Сохранить как";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.exitToolStripMenuItem.Text = "Выход";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -218,7 +218,7 @@
             this.referencesToolStripMenuItem,
             this.sourceToolStripMenuItem});
             this.textToolStripMenuItem.Name = "textToolStripMenuItem";
-            this.textToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.textToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.textToolStripMenuItem.Text = "Текст";
             // 
             // problemToolStripMenuItem
@@ -325,54 +325,6 @@
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // editRichTextBox
-            // 
-            this.editRichTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.editRichTextBox.Location = new System.Drawing.Point(12, 52);
-            this.editRichTextBox.Name = "editRichTextBox";
-            this.editRichTextBox.Size = new System.Drawing.Size(776, 241);
-            this.editRichTextBox.TabIndex = 2;
-            this.editRichTextBox.Text = "";
-            this.editRichTextBox.TextChanged += new System.EventHandler(this.editRichTextBox_TextChanged);
-            // 
-            // resultRichTextBox
-            // 
-            this.resultRichTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.resultRichTextBox.Location = new System.Drawing.Point(12, 309);
-            this.resultRichTextBox.Name = "resultRichTextBox";
-            this.resultRichTextBox.ReadOnly = true;
-            this.resultRichTextBox.Size = new System.Drawing.Size(776, 106);
-            this.resultRichTextBox.TabIndex = 3;
-            this.resultRichTextBox.Text = "Область отображения результатов";
-            // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.Filter = "Текстовый документ(*.txt)|*.txt|Все файлы(*.*)|*.*";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // createToolStripButton
             // 
             this.createToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -413,6 +365,11 @@
             this.toolStripButton1.Text = "saveAsToolStripButton";
             this.toolStripButton1.ToolTipText = "Сохранить как";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // cutToolStripButton
             // 
@@ -464,6 +421,11 @@
             this.toolStripButton3.Text = "Удалить всё";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // undoToolStripButton
             // 
             this.undoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -484,6 +446,11 @@
             this.redoToolStripButton.Text = "Вернуть";
             this.redoToolStripButton.Click += new System.EventHandler(this.redoToolStripButton_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
             // runToolStripButton
             // 
             this.runToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -492,6 +459,12 @@
             this.runToolStripButton.Name = "runToolStripButton";
             this.runToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.runToolStripButton.Text = "Пуск";
+            this.runToolStripButton.Click += new System.EventHandler(this.runToolStripButton_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
             // helpToolStripButton
             // 
@@ -502,6 +475,36 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "Справка";
             this.helpToolStripButton.Click += new System.EventHandler(this.helpToolStripButton_Click);
+            // 
+            // editRichTextBox
+            // 
+            this.editRichTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editRichTextBox.Location = new System.Drawing.Point(12, 52);
+            this.editRichTextBox.Name = "editRichTextBox";
+            this.editRichTextBox.Size = new System.Drawing.Size(776, 241);
+            this.editRichTextBox.TabIndex = 2;
+            this.editRichTextBox.Text = "";
+            this.editRichTextBox.TextChanged += new System.EventHandler(this.editRichTextBox_TextChanged);
+            this.editRichTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.editRichTextBox_KeyDown);
+            this.editRichTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.editRichTextBox_KeyPress);
+            // 
+            // resultRichTextBox
+            // 
+            this.resultRichTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.resultRichTextBox.Location = new System.Drawing.Point(12, 309);
+            this.resultRichTextBox.Name = "resultRichTextBox";
+            this.resultRichTextBox.ReadOnly = true;
+            this.resultRichTextBox.Size = new System.Drawing.Size(776, 106);
+            this.resultRichTextBox.TabIndex = 3;
+            this.resultRichTextBox.Text = "Область отображения результатов";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Текстовый документ(*.txt)|*.txt|Все файлы(*.*)|*.*";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 

@@ -8,19 +8,29 @@ using System.Text.RegularExpressions;
 
 namespace Rextester
 {
-    // описывает номер банковской карты в тексте
-    public struct CardInText
-    {
-        public string number;
-        public string type;
-        public int start_position;
-        public int end_position;   
-     }
-    
     public class Program
     {
 
-        public static CardInText[] getCards(string text, string type="")
+        public static string typeCard(string number)
+        {
+            int type_number = number[0] - '0'; 
+            switch (type_number)
+            {
+                case 2: 
+                    return "Мир";
+                    break;
+                case 5: 
+                    return "MasterCard";
+                    break;
+                case 4: 
+                    return "Visa";
+                    break;
+                default: 
+                    return "Undefined";
+            }
+        }
+        
+        public static void printCards(string text, string type="")
         { 
             string exp;
             
@@ -34,49 +44,19 @@ namespace Rextester
                 exp = @"\b[0-9]{16}\b";
             
             Regex regex = new Regex(exp);
-            
             MatchCollection matches = regex.Matches(text);
-            
-            CardInText[] card_list = new CardInText[matches.Count];
-            
-            int i = 0;
             
             foreach (Match match in matches)
             {
-                card_list[i].number = match.Value;
-                card_list[i].start_position = match.Index;
-                card_list[i].end_position = match.Index + match.Length;
-                int type_number = match.Value[0] - '0'; 
-                switch (type_number)
-                {
-                    case 2: 
-                        card_list[i].type = "Мир";
-                        break;
-                    case 5: 
-                        card_list[i].type = "MasterCard";
-                        break;
-                    case 4: 
-                        card_list[i].type = "Visa";
-                        break;
-                    default: 
-                        card_list[i].type = "Undefined";
-                        break;
-                }
-                i++;
+                Console.WriteLine(match.Value + " " + typeCard(match.Value) + " (" + match.Index.ToString() + "-" + 
+                                 (match.Index + match.Length).ToString() + ")");
             }
-            
-            return card_list;
         }
         
         public static void Main(string[] args)
         {
             string text = "2234567891011121 5234567891011121 \n 1234567891011121";
-            CardInText[] card_list = getCards(text, "MasterCard");
-            foreach (CardInText card in card_list)
-            {
-                Console.WriteLine(card.number.ToString() + " " + card.type + " (" + card.start_position.ToString() + "-" + card.end_position.ToString() + ")");
-            }
-            
+            printCards(text);
         }
     }
 }
