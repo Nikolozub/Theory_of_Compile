@@ -40,3 +40,14 @@ E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debu
 E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.csproj.CoreCompileInputs.cache
 E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.exe
 E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.pdb
+C:\Users\samsonov.2017\source\repos\theory_of_compile(original)\Code_Analysis\Code_Analysis\bin\Debug\Code_Analysis.exe.config
+C:\Users\samsonov.2017\source\repos\theory_of_compile(original)\Code_Analysis\Code_Analysis\bin\Debug\Code_Analysis.exe
+C:\Users\samsonov.2017\source\repos\theory_of_compile(original)\Code_Analysis\Code_Analysis\bin\Debug\Code_Analysis.pdb
+C:\Users\samsonov.2017\source\repos\theory_of_compile(original)\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.csprojAssemblyReference.cache
+C:\Users\samsonov.2017\source\repos\theory_of_compile(original)\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.Form1.resources
+C:\Users\samsonov.2017\source\repos\theory_of_compile(original)\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.HelpForm.resources
+C:\Users\samsonov.2017\source\repos\theory_of_compile(original)\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.Properties.Resources.resources
+C:\Users\samsonov.2017\source\repos\theory_of_compile(original)\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.csproj.GenerateResource.cache
+C:\Users\samsonov.2017\source\repos\theory_of_compile(original)\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.csproj.CoreCompileInputs.cache
+C:\Users\samsonov.2017\source\repos\theory_of_compile(original)\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.exe
+C:\Users\samsonov.2017\source\repos\theory_of_compile(original)\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.pdb

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Code_Analysis
 {
@@ -330,13 +331,21 @@ namespace Code_Analysis
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            editRichTextBox.Clear();
+            editRichTextBox.Text = "";
         }
 
         private void runToolStripButton_Click(object sender, EventArgs e)
         {
-            string log = RegularExp.printCards(editRichTextBox.Text);
-            resultRichTextBox.Text = log;
+            /*string log = RegularExp.printCards(editRichTextBox.Text);
+            resultRichTextBox.Text = log;*/
+            string chain = editRichTextBox.Text;
+            List<string> valid_chains = StateMachine.validChains(chain, StateMachine.transFunction2, "A", "E");
+
+            resultRichTextBox.Clear();
+            foreach (string ch in valid_chains) 
+            {
+                resultRichTextBox.Text += ch + '\n';
+            }
         }
 
         private void editRichTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -356,6 +365,10 @@ namespace Code_Analysis
 
         }
 
+        private void resultRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
  
 }
