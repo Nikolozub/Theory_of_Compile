@@ -336,15 +336,19 @@ namespace Code_Analysis
 
         private void runToolStripButton_Click(object sender, EventArgs e)
         {
-            /*string log = RegularExp.printCards(editRichTextBox.Text);
-            resultRichTextBox.Text = log;*/
+            resultRichTextBox.Clear();
+            resultRichTextBox.Text = "Лабораторная 2 (Регулярные выражения)\n";
+            string log = RegularExp.printCards(editRichTextBox.Text);
+            resultRichTextBox.Text += log;
+
+            resultRichTextBox.Text += "\nЛабораторная 3 (Конечный автомат)\n";
+
             string chain = editRichTextBox.Text;
             List<string> valid_chains = StateMachine.validChains(chain, StateMachine.transFunction, "A1", "K");
 
-            resultRichTextBox.Clear();
-            foreach (string ch in valid_chains) 
+            foreach (string ch in valid_chains)
             {
-                resultRichTextBox.Text += ch + '\n';
+                resultRichTextBox.Text += ch + " (" + RegularExp.typeCard(ch) + ")\n";
             }
         }
 
