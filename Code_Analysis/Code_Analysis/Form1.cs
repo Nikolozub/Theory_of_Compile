@@ -339,7 +339,7 @@ namespace Code_Analysis
             /*string log = RegularExp.printCards(editRichTextBox.Text);
             resultRichTextBox.Text = log;*/
             string chain = editRichTextBox.Text;
-            List<string> valid_chains = StateMachine.validChains(chain, StateMachine.transFunction2, "A", "E");
+            List<string> valid_chains = StateMachine.validChains(chain, StateMachine.transFunction, "A1", "K");
 
             resultRichTextBox.Clear();
             foreach (string ch in valid_chains) 
