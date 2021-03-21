@@ -29,3 +29,14 @@ C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Co
 C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.csproj.CoreCompileInputs.cache
 C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.exe
 C:\Users\sams\Desktop\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.pdb
+E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\bin\Debug\Code_Analysis.exe.config
+E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\bin\Debug\Code_Analysis.exe
+E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\bin\Debug\Code_Analysis.pdb
+E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.csprojAssemblyReference.cache
+E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.Form1.resources
+E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.HelpForm.resources
+E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.Properties.Resources.resources
+E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.csproj.GenerateResource.cache
+E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.csproj.CoreCompileInputs.cache
+E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.exe
+E:\Компиляторы\theory_of_compile\Code_Analysis\Code_Analysis\obj\Debug\Code_Analysis.pdb

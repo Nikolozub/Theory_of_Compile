@@ -27,9 +27,11 @@ namespace Code_Analysis
         string currentFileName;
         string windowsTitle;
         bool textSaved;
+         
 
         RingStack<TextState> undo_stack = new RingStack<TextState>(100);
         RingStack<TextState> redo_stack = new RingStack<TextState>(100);
+        string buff_text;
 
         public Form1()
         {
@@ -41,6 +43,7 @@ namespace Code_Analysis
         {
             this.textSaved = true;
             newFile();
+            buff_text = editRichTextBox.Text;
         }
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,28 +100,14 @@ namespace Code_Analysis
 
         private void undoToolStripButton_Click(object sender, EventArgs e)
         {
-            // нормальный вариант: editRichTextBox.Undo();
-
-            if (!undo_stack.isempty())
-            {
-                redo_stack.push(new TextState(editRichTextBox.Text, editRichTextBox.SelectionStart));
-                TextState s = undo_stack.pop();
-                editRichTextBox.Text = s.text;
-                editRichTextBox.SelectionStart = s.cursor_pos;
-            }
+            editRichTextBox.Undo();
+            //Undo();
         }
 
         private void redoToolStripButton_Click(object sender, EventArgs e)
         {
-            // нормальный вариант: editRichTextBox.Redo();
-            
-            if (!redo_stack.isempty())
-            {
-                undo_stack.push(new TextState(editRichTextBox.Text, editRichTextBox.SelectionStart));
-                TextState s = redo_stack.pop();
-                editRichTextBox.Text = s.text;
-                editRichTextBox.SelectionStart = s.cursor_pos;
-            }
+            editRichTextBox.Redo(); 
+            //Redo();
         }
 
         private void newFile() 
@@ -236,12 +225,42 @@ namespace Code_Analysis
             saveFileAs();
         }
 
+        private void Undo() 
+        {
+            if (!undo_stack.isempty())
+            {
+                redo_stack.push(new TextState(editRichTextBox.Text, editRichTextBox.SelectionStart));
+                TextState s = undo_stack.pop();
+                //s = undo_stack.pop();
+                //MessageBox.Show(s.text);
+                editRichTextBox.Text = s.text;
+                editRichTextBox.SelectionStart = s.cursor_pos;
+                buff_text = editRichTextBox.Text;
+            }
+        }
+
+        private void Redo() 
+        {
+            if (!redo_stack.isempty())
+            {
+                 undo_stack.push(new TextState(editRichTextBox.Text, editRichTextBox.SelectionStart));
+                 TextState s = redo_stack.pop();
+                 editRichTextBox.Text = s.text;
+                 editRichTextBox.SelectionStart = s.cursor_pos;
+                 buff_text = editRichTextBox.Text;
+            }
+        }
+
         // Изменение текста
         private void editRichTextBox_TextChanged(object sender, EventArgs e)
         {
             this.textSaved = false;
             this.Text = currentFileName + "* - " + windowsTitle;
 
+            // сохранение состояния
+            undo_stack.push(new TextState(buff_text, editRichTextBox.SelectionStart));
+            redo_stack.clear();
+            buff_text = editRichTextBox.Text;
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -316,7 +335,8 @@ namespace Code_Analysis
 
         private void runToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(editRichTextBox.SelectionStart.ToString());
+            string log = RegularExp.printCards(editRichTextBox.Text);
+            resultRichTextBox.Text = log;
         }
 
         private void editRichTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -327,8 +347,16 @@ namespace Code_Analysis
 
         private void editRichTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            undo_stack.push(new TextState(editRichTextBox.Text, editRichTextBox.SelectionStart));
-            redo_stack.clear();
+            /*ndo_stack.push(new TextState(editRichTextBox.Text, editRichTextBox.SelectionStart));
+            redo_stack.clear();*/
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
     }
+ 
 }
+
