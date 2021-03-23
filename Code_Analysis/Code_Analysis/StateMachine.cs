@@ -22,26 +22,28 @@ namespace Code_Analysis
     {
         /*
         */
-        public static List<string> validChains(string chain, Func<string, string, string> transFunction, string startState, string endState)
+        public static List<Substring> validChains(string text, Func<string, string, string> transFunction, string startState, string endState)
         {
-            List<string> validChains = new List<string>();
-            string validChain = "";
-            string state = startState;
+            List<Substring> validChains = new List<Substring>();
+            Substring sbstr = new Substring(0, 0);
+
+            string state = startState;  
             int i = 0;
-            while (i < chain.Length) 
+
+            while (i < text.Length) 
             {
-                string _char = chain[i].ToString();
+                string _char = text[i].ToString();
                 string new_state = transFunction(state, _char);
 
                 if (new_state != "ERROR")
                 {
                     state = new_state;
-                    validChain += _char;
+                    sbstr.lenght++;
 
                     if (new_state == endState)
                     {
-                        validChains.Add(validChain);
-                        validChain = "";
+                        validChains.Add(new Substring(sbstr.index, sbstr.lenght));
+                        sbstr.lenght = 0;
                         state = startState;
                     }
 
@@ -52,7 +54,8 @@ namespace Code_Analysis
                     if (state == startState) 
                         i++;
                     state = startState;
-                    validChain = "";
+                    sbstr.lenght = 0;
+                    sbstr.index = i;
                 }
             }
 
@@ -63,7 +66,7 @@ namespace Code_Analysis
         /*Функция переходов*/
         public static string transFunction(string state, string _char)
         {
-            if (state == "A1" && char.IsNumber(_char[0])) return "B1";
+            if (state == "A1" && char.IsNumber(_char[0]) && _char[0] >= '2' && _char[0] <= '6') return "B1";
             if (state == "B1" && char.IsNumber(_char[0])) return "C1";
             if (state == "C1" && char.IsNumber(_char[0])) return "D1";
             if (state == "D1" && char.IsNumber(_char[0])) return "E1";

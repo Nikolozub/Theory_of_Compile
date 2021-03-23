@@ -343,12 +343,15 @@ namespace Code_Analysis
 
             resultRichTextBox.Text += "\nЛабораторная 3 (Конечный автомат)\n";
 
-            string chain = editRichTextBox.Text;
-            List<string> valid_chains = StateMachine.validChains(chain, StateMachine.transFunction, "A1", "K");
+            string text = editRichTextBox.Text;
+            List<Substring> valid_chains = StateMachine.validChains(text, StateMachine.transFunction, "A1", "K");
 
-            foreach (string ch in valid_chains)
+            foreach (Substring sbstr in valid_chains)
             {
-                resultRichTextBox.Text += ch + " (" + RegularExp.typeCard(ch) + ")\n";
+                string value = text.Substring(sbstr.index, sbstr.lenght);
+                RowCol rc = ConvertPosition.IndexToRowCol(text, sbstr.index);
+                resultRichTextBox.Text += value + " " + RegularExp.typeCard(value) + " (Строка: " + rc.row.ToString() + " Столбец: " +
+                rc.col.ToString() + ")\n";
             }
         }
 
