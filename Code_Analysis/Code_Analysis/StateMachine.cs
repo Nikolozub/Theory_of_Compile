@@ -6,11 +6,21 @@ using System.Threading.Tasks;
 
 namespace Code_Analysis
 {
+    public class Substring
+    {
+        public int index;
+        public int lenght;
+
+        public Substring(int index, int lenght)
+        {
+            this.index = index;
+            this.lenght = lenght;
+        }
+    }
+
     public static class StateMachine
     {
-        /*Выполнение конечного автомата на цепочке символов chain.
-          Если пришли в конечное состояние, то возвращает true,
-          иначе возвращает false.
+        /*
         */
         public static List<string> validChains(string chain, Func<string, string, string> transFunction, string startState, string endState)
         {

@@ -42,19 +42,14 @@ namespace Code_Analysis
 
             Regex regex = new Regex(@"\b[2-6]([0-9]{15}|[0-9]{3}-[0-9]{4}-[0-9]{4}-[0-9]{4}|[0-9]{3} [0-9]{4} [0-9]{4} [0-9]{4})\b");
             string outText = "";
-            int n_line = 1;
 
-            foreach (string line in lines) 
+            MatchCollection matches = regex.Matches(text);
+
+            foreach (Match match in matches)
             {
-                MatchCollection matches = regex.Matches(line);
-
-                foreach (Match match in matches)
-                {
-                    outText += match.Value + " " + typeCard(match.Value) + " (Строка: " + n_line.ToString() + " Столбец: " +
-                            match.Index.ToString() + ")\n";
-                
-                }
-                n_line++;
+                RowCol rc = ConvertPosition.IndexToRowCol(text, match.Index);
+                outText += match.Value + " " + typeCard(match.Value) + " (Строка: " + rc.row.ToString() + " Столбец: " +
+                rc.col.ToString() + ")\n";
             }
 
             return outText;
