@@ -337,9 +337,9 @@ namespace Code_Analysis
         private void runToolStripButton_Click(object sender, EventArgs e)
         {
             resultRichTextBox.Clear();
-            resultRichTextBox.Text = "Лабораторная 2 (Регулярные выражения)\n";
+            /*resultRichTextBox.Text = "Лабораторная 2 (Регулярные выражения)\n";
             string log = RegularExp.printCards(editRichTextBox.Text);
-            resultRichTextBox.Text += log;
+            resultRichTextBox.Text += log;*/
 
             resultRichTextBox.Text += "\nЛабораторная 3 (Конечный автомат)\n";
 
@@ -353,6 +353,14 @@ namespace Code_Analysis
                 resultRichTextBox.Text += value + " " + RegularExp.typeCard(value) + " (Строка: " + rc.row.ToString() + " Столбец: " +
                 rc.col.ToString() + ")\n";
             }
+
+            resultRichTextBox.Text += "\nПереходы по состояниям:\n";
+
+            foreach (string state in StateMachine.logStates) 
+            {
+                resultRichTextBox.Text += state + ' ';
+            }
+
         }
 
         private void editRichTextBox_KeyDown(object sender, KeyEventArgs e)

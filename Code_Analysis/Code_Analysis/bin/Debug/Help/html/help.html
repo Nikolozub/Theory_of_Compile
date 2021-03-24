@@ -4,102 +4,98 @@
     <meta charset="UTF-8">
     <meta name="description" content="Это пример кода HTML5"/>
     <meta name="keywords" content="HTML5"/>
-    <title>Заголовок</title>
-    <style type="text/css">
-        .block1
-        {
-            width: 800px;
-
-            padding: 0px;
-            border: solid 0px black;
-            float: left;
-
-            top: 0px;
-            left: 0px;
-        }
-        .block2
-        {
-            width: 200px;
-            background: #fc0;
-            padding: 5px;
-            border: solid 1px black;
-            float: left;
-            position: relative;
-            top: 0px;
-            left: 0px;
-        }
-        .letter
-        {
-            color: red; /* Красный цвет символов */
-            font-size: 00%; /* Размер шрифта в процентах */
-            font-family: serif; /* Шрифт с засечками */
-            position: relative; /* Относительное позиционирование */
-            top: 5px; /* Сдвиг сверху */
-        }
-        time
-        {
-            background: #f0f0f0;
-        }
-    </style>
+    <link rel="icon" type="image/png" href="property.png">
+    <title>Справка</title>
+    <link rel="stylesheet" href="/Help/html/help.css"> <!-- Мы тут подключаем файл с стилями-->
 </head>
 <body>
 <header>
     <h1>Справка об анализаторе кода</h1>
 
 </header>
-<p>Содержание</p>
+<p>Содержание:</p>
 <nav>
-    <blockquote><a HREF="#Описание программы">Описание программы</a></blockquote>
-    <blockquote><a HREF="#Описании функций">Описании функций</a></blockquote>
-    <blockquote><a HREF="#Регулярные выражения">Регулярные выражения</a></blockquote>
     <ul>
-        <li>домой</li>
-        <li>фотографии</li>
-        <li>видео</li>
-        <li>контакты</li>
+        <li>
+            <blockquote><a HREF="#name1">Описание программы</a></blockquote>
+        </li>
+        <li>
+            <blockquote><a HREF="#name2">Описании функций</a></blockquote>
+        </li>
+        <li>
+            <blockquote><a HREF="#name3">Регулярные выражения</a></blockquote>
+        </li>
+        <li>
+            <blockquote><a HREF="#name4">Конечные автоматы</a></blockquote>
+        </li>
     </ul>
 </nav>
 <section>
     <article>
         <header>
 
-            <h2><a NAME="Описание программы">Описание программы</a></h2>
+            <h2><a id="name1">Описание программы</a></h2>
 
         </header>
 
-            Программа Анализатор кода является текстовым редактором. Это значит, что данная программа
-        предназначена для работы с текстом. В ней мы можем  вводить текст и редактировать его.
-            Давайте запустим АК. Для этого щелкаем мышкой по значку программы. Откроется окно программы.
+        Программа Анализатор кода является текстовым редактором. Это значит, что данная программа
+        предназначена для работы с текстом. В ней мы можем вводить текст и редактировать его.
+        Давайте запустим АК. Для этого щелкаем мышкой по значку программы. Откроется окно программы.
+        <h3>Вид программы</h3>
+        <img src="screen1.png" alt="Вид программы">
+        <br>
+        Рисунок 1 – Вид программы
+
         <hr>
         <footer>
         </footer>
     </article>
     <article>
         <header>
-            <h2><a NAME="Описании функций">Описании функций</a></h2>
+            <h2><a id="name2">Описании функций</a></h2>
         </header>
-        <h3>Создать</h3>
-        Создает новый документ.
-        <h3>Открыть</h3>
-        Открывает документ с расширением *.rtf
-        <h3>Сохранить</h3>
-        Созраняет документ с расширением *.rtf
-        <h3>Созранить как</h3>
-        Созраняет документ с измененным названием и расширением *.rtf
-        <h3>Выход</h3>
-        Закрывает программу</h4>
-        <h3>Отменить</h3>
-        Отменяет последнее совершенное действие
-        <h3>Повторить</h3>
-        Возвращает  последнюю совершенную отмену
-        <h3>Вырезать</h3>
+        <h3>Создать&nbsp;&nbsp;<img src="new.png" alt=""></h3>
+        Создает новый документ
+        <h3>Открыть&nbsp;&nbsp;<img src="open.png" alt=""></h3>
+        Открывает документ с расширением *.txt
+        <h3>Сохранить&nbsp;&nbsp;<img src="save.png" alt=""></h3>
+        Сохраняет документ с расширением *.txt
+        <h3>Созранить как&nbsp;&nbsp;<img src="saveAs.png" alt=""></h3>
+        Сохраняет документ с измененным названием и расширением *.txt
+        <h3>Вырезать&nbsp;&nbsp;<img src="cut.png" alt=""></h3>
         Вырезает выделеный текст в буфер обмена
-        <h3>Копировать</h3>
+        <h3>Копировать&nbsp;&nbsp;<img src="copy.png" alt=""></h3>
         Копирует текст в буфер обмена
-        <h3>Вставить</h3>
-        Вставить текст из буфера обмена
-        <h3>Удалить</h3>
-        Удалить выделеный текст
+        <h3>Вставить&nbsp;&nbsp;<img src="paste.png" alt=""></h3>
+        Вставляет текст из буфера обмена
+        <h3>Удалить&nbsp;&nbsp;<img src="delete.png" alt=""></h3>
+        Удаляет выделеный текст
+        <h3>Удалить всё&nbsp;&nbsp;<img onclick="test()" src="deleteAll.png"></h3>
+        Удалить весь текст в документе
+        <script>
+            function test(){
+                var audio = document.createElement('audio');
+                audio.setAttribute("autoplay","true");
+                audio.innerHTML = "<source src=\"deleteAll.mp3\" type=\"audio/mpeg\">";
+                document.body.appendChild(audio);
+            }
+        </script>
+        <h3>Отменить&nbsp;&nbsp;<img src="cancel.png" alt=""></h3>
+        Отменяет последнее совершенное действие
+        <h3>Повторить&nbsp;&nbsp;<img src="back.png" alt=""></h3>
+        Возвращает последнюю совершенную отмену
+        <h3>Пуск&nbsp;&nbsp;<img onclick="test2()" src="play.png"></h3>
+        Запускает программу обработки кода
+        <script>
+            function test2(){
+                var audio = document.createElement('audio');
+                audio.setAttribute("autoplay","true");
+                audio.innerHTML = "<source src=\"put.mp3\" type=\"audio/mpeg\">";
+                document.body.appendChild(audio);
+            }
+        </script>
+        <h3>Справка&nbsp;&nbsp;<img src="property.png" alt=""></h3>
+        Открывает справку по анализатору кода
         <h3>Выделить всё</h3>
         Выделяет весь текст в текстовом поле.
         <hr>
@@ -107,16 +103,91 @@
     <article>
         <header>
 
-            <h2><a NAME="Регулярные выражения">Регулярные выражения</a></h2>
+            <h2><a id="name3">Регулярные выражения</a></h2>
 
         </header>
         Мы ищем номера банковских карт, которые содержат в себе 16 символов и записываются в виде
+        <h3>Вид ввода номера банковской карты:</h3>
         <p>yxxx xxxx xxxx xxxx</p>
         <p>yxxx-xxxx-xxxx-xxxx</p>
         <p>yxxxxxxxxxxxxxxx</p>
         <p>Где "x" является числом от 0 до 9</p>
         <p>Где "y" является числом от 2 до 6</p>
+        <h3>Современный номер банковской карты состоит из 16 цифр. Первая цифра означает платежную систему:</h3>
+        <table>
+            <tr>
+                <td>Первая цифра банковской карты</td>
+                <td>Платёжная система</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Мир</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>American express, Maestro, JCB</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Visa</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Mastercard, Maestro</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Maestro, Union pay</td>
+            </tr>
+        </table>
+        <h3>Регулярное выражение:</h3>
         <pre>\b[2-6]([0-9]{15}|[0-9]{3}-[0-9]{4}-[0-9]{4}-[0-9]{4}|[0-9]{3} [0-9]{4} [0-9]{4} [0-9]{4})\b</pre>
+        <hr>
+        <footer>
+        </footer>
+    </article>
+    <article>
+        <header>
+
+            <h2><a id="name4">Конечные автоматы</a></h2>
+
+        </header>
+        <h3>Исходные данные:</h3>
+        <table>
+            <tr>
+                <td><span>Алфавит</span></td>
+                <td><span>
+                    Цифры 0..9 (обзн. «ц»), пробел (обозн. «п»), дефис (обозн. «-»)
+                </span></p></td>
+            </tr>
+            <tr>
+                <td><span>Состояния</span></td>
+                <td><span>
+                    A1, B1, C1, D1, E1, A21, B21, C21, D21,<br>
+                    E21, A31, B31, C31, D31, E31, A41, B41, C41, <br>
+                    D41, A22, B22, C22, D22, E22, A32, B32, C32, <br>
+                    D32, E32, A42, B42, C42, D42, A23, B23, C23,<br>
+                    D23, A33, B33, C33, D33, A43, B43, C43, K<br>
+                </span></p></td>
+            </tr>
+            <tr>
+                <td><span>Начальное состояние</span></td>
+                <td><span>A1</span></td>
+            </tr>
+            <tr>
+                <td><span>Начальное состояние</span></td>
+                <td><span>K</span></td>
+            </tr>
+        </table>
+        <img src="screen2.png" alt="ДКА распознающий номер карты">
+        <br>
+        Рисунок 2 – ДКА распознающий номер карты
+        <br>
+        <img src="screen3.png" alt="Функция переходов">
+        <br>
+        <img src="screen4.png" alt="Функция переходов">
+        <br>
+        Рисунок 3 – Функция переходов
         <hr>
         <footer>
         </footer>
@@ -126,9 +197,13 @@
 
 </aside>
 <footer>
-    Сделано Кириллом и Николаем в 2021<p>
+    <h3>Сделано Кириллом и Николаем в 2021</h3>
+    <small>"Ссылки на странциы в ВК авторов работы, чтобы можно было лично
+        написать и восхититься сьей работой"</small>
+    <br>
     <a href="https://vk.com/ya_za_ya">https://vk.com/ya_za_ya</a>
-    <small>"Это ссылка на мою страницу ВК, чтобы можно было лично написать и восхититься сьей работой"</small>
+    <br>
+    <a href=https://vk.com/id307756012>https://vk.com/id307756012</a>
 </footer>
 </body>
 </html>

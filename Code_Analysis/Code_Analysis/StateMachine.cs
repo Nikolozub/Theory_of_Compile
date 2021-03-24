@@ -20,12 +20,15 @@ namespace Code_Analysis
 
     public static class StateMachine
     {
-        /*
-        */
+        public static List<string> logStates = new List<string>(); // логирование состояний
+
         public static List<Substring> validChains(string text, Func<string, string, string> transFunction, string startState, string endState)
         {
             List<Substring> validChains = new List<Substring>();
             Substring sbstr = new Substring(0, 0);
+
+            logStates.Clear();
+            logStates.Add(startState);
 
             string state = startState;  
             int i = 0;
@@ -35,25 +38,30 @@ namespace Code_Analysis
                 string _char = text[i].ToString();
                 string new_state = transFunction(state, _char);
 
-                if (new_state != "ERROR")
+                logStates.Add(new_state);
+
+                if (new_state != "<ERROR>")
                 {
                     state = new_state;
                     sbstr.lenght++;
 
+                    i++;
+
                     if (new_state == endState)
                     {
                         validChains.Add(new Substring(sbstr.index, sbstr.lenght));
+                        sbstr.index = i;
                         sbstr.lenght = 0;
                         state = startState;
-                    }
-
-                    i++;
+                        logStates.Add(startState);
+                    } 
                 }
                 else 
                 {
                     if (state == startState) 
                         i++;
                     state = startState;
+                    logStates.Add(startState);
                     sbstr.lenght = 0;
                     sbstr.index = i;
                 }
@@ -127,7 +135,7 @@ namespace Code_Analysis
             if (state == "D41" && char.IsNumber(_char[0])) return "K";
 
 
-            return "ERROR";
+            return "<ERROR>";
         }
 
     }
